@@ -24,6 +24,10 @@ func MapHandler(pathsToUrls map[string]string, fallback http.Handler) http.Handl
 	}
 }
 
+/*
+	Convierte un YAML a un map de urls y le aplica la función anterior
+*/
+
 func YAMLhandler(yamlBytes []byte, fallback http.Handler) (http.HandlerFunc, error) {
 	pathUrls, err := parseYaml(yamlBytes)
 	if err != nil {
